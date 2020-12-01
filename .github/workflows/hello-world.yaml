@@ -11,10 +11,11 @@ jobs:
 
       - name: Get CML
         uses: iterative/setup-cml@v1
+       
+      - name: Test
         env:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-      
-      - run: |
+          repo_token: ${{ secrets.GITHUB_TOKEN }} 
+        run: |
           cml-publish dog.jpg --md > report.md
           cml-send-comment report.md
 
