@@ -11,6 +11,8 @@ jobs:
 
       - name: Get CML
         uses: iterative/setup-cml@v1
+        env:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
       
       - run: |
           cml-publish dog.jpg --md > report.md
