@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Get CML
-        uses: iterative/cml-action@v1
+        uses: iterative/setup-cml@v1
       
       - run: |
           cml-publish dog.jpg --md > report.md
