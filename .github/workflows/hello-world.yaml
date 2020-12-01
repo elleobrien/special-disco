@@ -9,9 +9,8 @@ jobs:
     container: docker://alpine:latest
     steps:
       - uses: actions/checkout@v2
-
-      - name: Get CML
-        uses: iterative/setup-cml@v1
+      - uses: actions/setup-node@v1
+      - uses: iterative/setup-cml@v1
        
       - name: Test
         env:
