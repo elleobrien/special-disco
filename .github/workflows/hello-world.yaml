@@ -1,0 +1,19 @@
+name: hello-world
+
+# Run this workflow every time a new commit pushed to your repository
+on: push
+jobs: 
+  hello-world:
+    # Name the Job
+    name: Say Hello
+    # Set the type of machine to run on
+    runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout@v2
+    
+    - name: Get CML
+    - uses: iterative/cml-action@v1
+    
+    - run: |
+        cml-publish dog.jpeg --md > report.md
+        cml-send-comment report.md
