@@ -16,6 +16,7 @@ jobs:
         env:
           repo_token: ${{ secrets.GITHUB_TOKEN }} 
         run: |
-          cml-publish dog.jpg --md > report.md
+          echo "## Howdy" > report.md
+          cml-publish dog.jpg --md >> report.md
           cml-send-comment report.md
 
